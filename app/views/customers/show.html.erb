@@ -1,0 +1,28 @@
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Price: </strong>
+  £<%= @product.price %>
+</p>
+
+<p>
+  <strong>In Stock:</strong>
+  <%= @product.quantity %>
+</p>
+
+<p>
+  <strong>Product category:</strong>
+  <%= @product.product_category %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<%= link_to 'Back', {:action => 'index'} %>

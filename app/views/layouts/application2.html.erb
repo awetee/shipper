@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+      <div class="large-12 columns">
+        <nav class="top-bar" data-topbar>
+          <ul class="title-area">
+            <li class="name">
+              <h1><a href="#">Shipper</a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"></a>Menu</li>
+          </ul>
+
+          <section class="top-bar-section">
+            <ul class="right">
+              <li class="active"><a href="/guests/index">Home</a>
+                
+              <li class="has-dropdown"><%= link_to 'Browse', { :controller=>"customers",:action => "ndex"} %>
+                <ul class="dropdown">
+                  <li><a href="#">Categories</a></li>
+                  <li><a href="#">Retailers</a></li>
+                  <li><a href="#">Products</a></li>
+                </ul>
+              </li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              
+              <% if retailer_signed_in? %>
+                Logged in as <strong><%= current_retailer.email %></strong>
+                <li><%= link_to 'Edit profile', edit_retailer_registration_path %></li>
+                <li><%= link_to "Logout", destroy_retailer_session_path, method: :delete %></li>
+              <% else %>
+                <li><%= link_to "Sign up", new_retailer_registration_path  %></li>
+                <li><%= link_to "Login", new_retailer_session_path  %></li>
+              <% end %>
+            </ul>
+          </section>
+        </nav>
+      </div>
+    <div id="main-container" class="row panel">
+      <div class="large-12 columns">
+        <%= yield %>
+        <%= javascript_include_tag "application" %>
+      </div>
+<!--       <aside class="large-3 columns">
+
+      </aside> -->
+    </div>
+  </body>
+</html>

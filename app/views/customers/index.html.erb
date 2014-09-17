@@ -1,0 +1,23 @@
+<div class="medium-12 columns">
+  <div class="row">
+      <div class="medium-3 columns"><h1>Products</h1></div> 
+  </div>
+
+  <div class="row">
+    <div class="medium-8 columns">
+      <div class="products">
+        <% @products.each do |product| %>
+        <a href="/customers/show/<%=product.id%>"> 
+        <div  class="large-12 columns product radius panel th">
+          <ul class="no-bullet">
+            <li class=""><h4><%= product.name %></h4></li>
+            <li class="">£<%= product.price %></li>
+          </ul>
+        </div>
+      </a>
+        <% end %>
+      </div>
+  </div>
+  </div>
+</div>
+
