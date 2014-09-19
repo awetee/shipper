@@ -1,4 +1,4 @@
-<h1>Your products</h1>
+<h1 class="panel">Your products</h1>
 
 <table>
   <thead>
@@ -20,9 +20,9 @@
         <td><%= product.quantity %></td>
         <td><%= product.product_category %></td>
         <td><%= product.description %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', product, :class=>"tiny button success radius" %></td>
+        <td><%= link_to 'Edit', edit_product_path(product), :class=>"tiny button success radius"  %></td>
+        <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } , :class=>"tiny button success radius" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'New Product', new_product_path, {:class=>"button small round success"} %>

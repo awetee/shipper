@@ -4,13 +4,19 @@
 <p>Shipper is a retail to doorstep delivery service that works on a crowdsourced concept. We want to make it easy for consumers, especially those less able to obtain their daily shopping needs.</p>
 <p>Register your interest today:</p>
 
-<%= link_to "Retailers", {:controller=>"retailers",:action=> "sign_up",:account_type => "Retailer"}, :class => "button button-medium" %>
+<%= link_to "Retailers", {:controller=>"retailers",:action=> "sign_up",:account_type => "Retailer"}, :class => "small button round success" %>
 
-<%= link_to "Customers", {:controller=>"customers",:action=> "sign_up",:account_type =>"Customer"}, :class => "button button-medium" %>
+<%= link_to "Customers", {:controller=>"customers",:action=> "sign_up",:account_type =>"Customer"}, :class => "small button round success" %>
 
-<%= link_to "Drivers", {:controller=>"drivers",:action=> "sign_up", :account_type => "Driver"}, :class => "button button-medium" %>
+<%= link_to "Drivers", {:controller=>"drivers",:action=> "sign_up", :account_type => "Driver"}, :class => "small button round success" %>
 
 </div>
+
+
+<%= javascript_tag("alert('Thanks for Registering. We'll be in contact soon');") %>
+
+
+<%= javascript_tag("jsRoar('Rails');")%>
  
 <!-- <hr>
  

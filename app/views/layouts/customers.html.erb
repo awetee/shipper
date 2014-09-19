@@ -35,16 +35,13 @@
               <li><a href="#">About</a></li>
               <li><a href="#">Contact</a></li>
               
-              <% if retailer_signed_in? %>
-                <li><%= link_to 'Edit profile', edit_retailer_registration_path %></li>
-                <li><%= link_to "Logout", destroy_retailer_session_path, :method => :delete %></li>
-              <% elsif customer_signed_in? %>
+              <% if customer_signed_in? %>
                 <li><%= link_to 'Edit profile', edit_customer_registration_path %></li>
                 <li><%= link_to "Logout", destroy_customer_session_path, :method => :delete %></li>
-              <% elsif driver_signed_in? %>
-                <li><%= link_to 'Edit profile', edit_driver_registration_path %></li>
-                <li><%= link_to "Logout", destroy_driver_session_path, :method => :delete %></li>
-              <% end %>
+                <% else %>
+                  <li><%= link_to "Sign up", new_customer_registration_path  %></li>
+                <li><%= link_to "Login", new_customer_session_path  %></li>
+                <% end %>
             </ul>
           </section>
         </nav>

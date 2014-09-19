@@ -11,8 +11,6 @@ Rails.application.routes.draw do
 
   resources :products
 
-  post "home" => "guests#index"
-
   # devise_scope :users do
   #   get "/login" => "devise/sessions#new"
   #   delete "/logout" => "devise/sessions#destroy"
