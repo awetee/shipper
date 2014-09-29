@@ -1,5 +1,7 @@
 class GuestsController < ApplicationController
+
 	layout "guests"
+
 	def index
 		if retailer_signed_in?
 		  	redirect_to(:controller=>"retailers")
@@ -12,5 +14,9 @@ class GuestsController < ApplicationController
 		end
 
 		@products = Product.order('created_at desc')
+	end
+
+	def sign_in
+		render("sign_in")
 	end
 end

@@ -24,7 +24,7 @@
 
           <section class="top-bar-section">
             <ul class="right">
-              <li class="active"><%= link_to 'Home', {:controller => "guests"} %></li>
+              <li class="active"><%= link_to 'Home', "/" %></li>
                 <li class="has-dropdown"><%= link_to 'Browse', { :controller=>"customers",:action => 'index'} %>
                 <!--<ul class="dropdown">
                   <li><a href="#">Categories</a></li>
@@ -36,15 +36,16 @@
               <li><a href="#">Contact</a></li>
               
               <% if retailer_signed_in? %>
-                <li><%= link_to 'Edit profile', edit_retailer_registration_path %></li>
+                <li><%= link_to "Edit profile", edit_retailer_registration_path %></li>
                 <li><%= link_to "Logout", destroy_retailer_session_path, :method => :delete %></li>
               <% elsif customer_signed_in? %>
-                <li><%= link_to 'Edit profile', edit_customer_registration_path %></li>
+                <li><%= link_to "Edit profile", edit_customer_registration_path %></li>
                 <li><%= link_to "Logout", destroy_customer_session_path, :method => :delete %></li>
               <% elsif driver_signed_in? %>
-                <li><%= link_to 'Edit profile', edit_driver_registration_path %></li>
+                <li><%= link_to "Edit profile", edit_driver_registration_path %></li>
                 <li><%= link_to "Logout", destroy_driver_session_path, :method => :delete %></li>
               <% end %>
+              <li><%= link_to "Login", {:controller=> "guests", :action=>"sign_in"}  %></li>
             </ul>
           </section>
         </nav>

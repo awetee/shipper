@@ -4,6 +4,7 @@ class Retailer < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
 
   has_many :products
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 end

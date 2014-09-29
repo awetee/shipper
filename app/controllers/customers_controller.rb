@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
 	@account_type = "Customer"
+  
   # before_action :authenticate_customer!
 
 	def index
