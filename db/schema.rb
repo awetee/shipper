@@ -11,9 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140917013756) do
+ActiveRecord::Schema.define(version: 20141012174719) do
+
+  create_table "cartitems", force: true do |t|
+    t.integer  "cart_item_id"
+    t.integer  "product_id"
+    t.integer  "cart_id"
+    t.float    "price",        limit: 24
+    t.integer  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "carts", force: true do |t|
+    t.integer  "cart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

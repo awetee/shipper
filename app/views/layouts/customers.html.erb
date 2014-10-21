@@ -42,6 +42,16 @@
                   <li><%= link_to "Sign up", new_customer_registration_path  %></li>
                 <li><%= link_to "Login", new_customer_session_path  %></li>
                 <% end %>
+
+              <li class="has-dropdown">Cart
+                <ul class="dropdown">
+                <% @cartitems = Cartitem.where(:cart_id => session[:cart_id]) %>
+                <% @cartitems.each do |item| %>
+                <li>item.product_id</li>
+
+              <% end %>
+                </ul>
+              </li>
             </ul>
           </section>
         </nav>

@@ -1,6 +1,16 @@
 class ProductsController < ApplicationController
   before_action :authenticate_retailer!
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_destroy :ensure_not_in_cart
+
+  def ensure_not_in_cart
+    if cart_item.count.zero?
+      return true
+    else
+      error[:base] << "Product in Cart"
+      return  false
+    end
+  end
 
   # GET /products
   # GET /products.json

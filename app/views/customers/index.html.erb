@@ -13,6 +13,7 @@
             <li class=""><h4><%= product.name %></h4></li>
             <li class="">£<%= product.price %></li>
           </ul>
+          <%= link_to "Add To Cart", {:controller=>"cartitem",:action=> "add_product_to_cart", :id => product.id}, :class => "small button round success" %>
         </div>
       </a>
         <% end %>

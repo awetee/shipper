@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'pg'
+# gem 'pg'
 
 gem 'devise', '~> 3.0.0.rc'
 

@@ -1,0 +1,19 @@
+﻿@model List<Shipper2.Models.Product>
+@{
+    ViewBag.Title = "ASP.NET MVC Music Store";
+}
+<div id="promotion">
+</div>
+<h3><em>Best Selling</em> Products</h3>
+<ul id="album-list">
+    @foreach (var product in Model)
+    {
+        <li>
+            <a href="@Url.Action("Details", "Store",
+                new { id = product.ProductId })">
+                <img alt="@product.Name" src="@product.ProductImage" />
+                <span>@product.Name</span>
+            </a>
+        </li>
+    }
+</ul>

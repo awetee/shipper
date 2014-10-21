@@ -1,6 +1,11 @@
 Rails.application.configure do
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  config.reload_classes_only_on_change = false
+
+  config.allow_concurrency = false
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

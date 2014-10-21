@@ -2,6 +2,8 @@ class GuestsController < ApplicationController
 
 	layout "guests"
 
+    before_filter :initialize_cart
+    
 	def index
 		if retailer_signed_in?
 		  	redirect_to(:controller=>"retailers")
